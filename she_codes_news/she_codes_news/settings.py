@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news.apps.NewsConfig',
+    'users.apps.UsersConfig',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'users:userHomePage'
+LOGOUT_REDIRECT_URL = 'news:index'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

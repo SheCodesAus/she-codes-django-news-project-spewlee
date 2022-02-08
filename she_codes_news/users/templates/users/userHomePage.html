@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1 class="welcome">Welcome {{ user.username }}!</h1>
+<p>Would you like to make a new story today?</p>
+<a href="{% url 'news:newStory' %}">Write New Story</a>
+{% endblock %}
