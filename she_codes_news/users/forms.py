@@ -8,8 +8,16 @@ class CustomUserCreationForm(UserCreationForm):
         model = CustomUser
         fields = ['username', 'email']
 
+
 class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
         fields = ['username', 'email']
+
+
+class UserProfileForm(UserChangeForm): #Come back to this. Not sure if "UserChangeForm" is the correct thing to pass
+    
+    class Meta:
+        model: CustomUser
+        fields = ['name', 'profile_pic', 'github_url', 'linkedin_url', 'bio' ]

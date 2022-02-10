@@ -12,7 +12,7 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
-class UserPageView(CreateView):
+class UserHomePageView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('userHomePage')
     template_name = 'users/userHomePage.html'
