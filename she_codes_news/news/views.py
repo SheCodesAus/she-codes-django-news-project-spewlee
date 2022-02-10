@@ -1,3 +1,4 @@
+from re import template
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
@@ -32,3 +33,10 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class EditStoryView(generic.UpdateView):
+    model = NewsStory
+    fields = ['title', 'category', 'image', 'content']
+    context_object_name = 'editStoryForm'
+    template_name = 'news/edit_story.html'
+    success_url = reverse_lazy('news:index')

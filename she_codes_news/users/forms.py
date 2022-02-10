@@ -16,8 +16,8 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ['username', 'email']
 
 
-class UserProfileForm(UserChangeForm): #Come back to this. Not sure if "UserChangeForm" is the correct thing to pass
+class UserProfileForm(forms.ModelForm):
     
     class Meta:
-        model: CustomUser
-        fields = ['name', 'profile_pic', 'github_url', 'linkedin_url', 'bio' ]
+        model = CustomUser
+        fields = ['first_name', 'last_name', 'profile_pic', 'github_url', 'linkedin_url', 'bio' ]
