@@ -1,10 +1,10 @@
 from re import template
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views import generic
 from .models import CustomUser
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, UserProfileForm
 
 # Create your views here.
 class CreateAccountView(CreateView):
@@ -12,7 +12,7 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
-class UserHomePageView(CreateView):
-    form_class = CustomUserCreationForm
+class UserHomePageView(UpdateView):
+    form_class = UserProfileForm
     success_url = reverse_lazy('userHomePage')
     template_name = 'users/userHomePage.html'
