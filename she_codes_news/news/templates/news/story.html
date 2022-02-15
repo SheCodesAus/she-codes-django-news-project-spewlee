@@ -8,11 +8,14 @@
 {% block content %}
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <a href="{% url 'users:profile-page' %}">{{ story.author }}</a>
+    <a href="{% url 'users:profile-page' story.author.id %}">{{ story.author }}</a>
     <h4>{{ story.category }}</h4>
-    {% if request.user.is_authenticated %}
-        <a href="{% url 'news:editStory' story.pk %}">Edit Story</a>
-    {% endif %}
+    {% if story.author == request.user %}
+        <div class="edit-card">
+                <a href="">Delete Story</a>
+                <a href="{% url 'news:editStory' story.pk %}">Update Story</a>
+        </div>
+        {% endif %}
         <div id="story-content">
         <img src="{{ story.image }}">
         {{ story.content|linebreaks }}

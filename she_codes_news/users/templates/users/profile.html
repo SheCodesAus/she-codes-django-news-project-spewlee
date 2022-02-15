@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock %}
 
 {% block content %}
 
-<h1> {{ user.first_name }} </h1>
-<p> {{ user.github_url }} </p>
-{{ page_user }}
+<h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
+<p> {{ profilePage.github_url }} </p>
+<p> {{ profilePage.bio }} </p>
 
 {% endblock %}
