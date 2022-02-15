@@ -1,12 +1,9 @@
-from re import template
-from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm, UserProfileForm
-from news.models import NewsStory
 
 # Create your views here.
 class CreateAccountView(CreateView):

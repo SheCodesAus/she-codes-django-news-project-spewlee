@@ -1,4 +1,3 @@
-from re import template
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
