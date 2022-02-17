@@ -5,6 +5,10 @@
     padding: 5px;
 }
 
+.story-card a {
+    color: black;
+}
+
 .story-card img {
     width: 100%;
     height: 300px;
