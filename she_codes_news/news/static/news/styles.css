@@ -19,6 +19,7 @@
 }
 
 #story-wrapper {
+    height: 80vh;
     margin: 1em;
     padding: 1em;
     background-image: url('images/linedPaper.jpg');
