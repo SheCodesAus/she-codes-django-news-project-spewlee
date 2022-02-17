@@ -20,8 +20,8 @@
 
 #story-wrapper {
     height: 80vh;
-    margin: 1em;
-    padding: 1em;
+    margin: 2.5em;
+    padding: 1.5em;
     background-image: url('images/linedPaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,6 +99,13 @@
 
 #story-content img {
     float: right;
-    margin: 0 0 10px 10px;
+    margin: 0 0 1em 1em;
     width: 50%;
+}
+
+.delete-story, .update-story {
+    background-image: url('images/linedPaper.jpg');
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }

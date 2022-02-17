@@ -12,10 +12,10 @@
             <h4>{{ story.category }}</h4>
         </div>
         {% if story.author == request.user %}
-        <div class="edit-card">
+            <div class="edit-card">
                 <a href="{% url 'news:deleteStory' story.pk %}">Delete Story</a>
                 <a href="{% url 'news:editStory' story.pk %}">Update Story</a>
-        </div>
+            </div>
         {% endif %}
     </a>
 </div>
