@@ -3,13 +3,20 @@
 body {
     background-image: url('corkboardBackground.jpg');
     border: 3em solid #8246AF ;
+    margin: 0
 }
 
 header {
+    background-color: #8246AF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    color: white;
+}
+
+.codes {
+    color: #FFA300;
 }
 
 img {
