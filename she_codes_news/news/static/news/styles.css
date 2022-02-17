@@ -14,8 +14,15 @@
 
 .story-card img {
     width: 100%;
-    height: 300px;
+    height: 10vh;
     object-fit: cover;
+}
+
+#story-wrapper {
+    background-image: url('images/linedPaper.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #latest-stories {
