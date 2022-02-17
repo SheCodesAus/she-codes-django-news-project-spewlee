@@ -39,3 +39,8 @@ class EditStoryView(generic.UpdateView):
     context_object_name = 'editStoryForm'
     template_name = 'news/edit_story.html'
     success_url = reverse_lazy('news:index')
+
+class DeleteStoryView(generic.DeleteView):
+    model = NewsStory
+    template_name = 'news/delete_story.html'
+    success_url = reverse_lazy('news:index')
