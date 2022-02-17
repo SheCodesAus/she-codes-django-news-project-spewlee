@@ -20,7 +20,7 @@
 
 #story-wrapper {
     background-image: url('images/linedPaper.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
