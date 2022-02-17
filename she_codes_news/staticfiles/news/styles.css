@@ -20,6 +20,8 @@
 }
 
 #story-wrapper {
+    margin: 1em;
+    padding: 1em;
     background-image: url('images/linedPaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
