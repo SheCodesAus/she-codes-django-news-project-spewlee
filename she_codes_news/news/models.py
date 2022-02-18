@@ -1,5 +1,6 @@
 from http.client import MULTIPLE_CHOICES
 from django.contrib.auth import get_user_model
+from users.models import CustomUser
 from django.db import models
 
 class Category(models.Model):
@@ -10,7 +11,6 @@ class Category(models.Model):
 
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
-    # author = models.CharField(max_length=200)
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE
@@ -25,10 +25,14 @@ class NewsStory(models.Model):
         blank = True
         )
     image = models.URLField(blank=True, null=True)
+    likes = models.ManyToManyField(CustomUser, related_name="story_like")
 
     class Meta:
         ordering = ['-pub_date']
 
     def __str__(self):
         return self.title
+
+    def num_of_likes(self):
+        return self.likes.count()
 
