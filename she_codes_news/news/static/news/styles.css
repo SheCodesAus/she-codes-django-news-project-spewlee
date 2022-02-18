@@ -107,8 +107,9 @@
 }
 
 .delete-story, .update-story {
-    background-image: url('images/linedPaper.jpg');
+    background-image: url("{% static 'images/linedPaper.jpg' %}");
     display:flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
