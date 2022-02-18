@@ -1,5 +1,3 @@
-from curses.ascii import HT
-from webbrowser import get
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy, reverse
@@ -27,17 +25,6 @@ class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
-
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-        likes_connected = get_object_or_404(NewsStory, id=self.kwargs['pk'])
-        liked = False
-        if likes_connected.likes.filter(id=self.request.user.id).exists():
-            liked = True
-        data['number_of_likes'] = likes_connected.number_of_likes()
-        data['post_is_liked'] = liked
-        return data
-
 
 
 class AddStoryView(generic.CreateView):
@@ -70,9 +57,6 @@ class DeleteStoryView(generic.DeleteView):
 
 def LikeStoryView(request, pk):
     story = get_object_or_404(NewsStory, id=request.POST.get('story_id'))
-    if story.likes.filter(id=request.user.id).exists():
-        story.likes.remove(request.user)
-    else:
-        story.likes.add(request.user)
+    story.likes.add(request.user)
 
-    return HttpResponseRedirect(reverse('story', args=[str(pk)]))
+    return HttpResponseRedirect(reverse(args=[str(pk)]))

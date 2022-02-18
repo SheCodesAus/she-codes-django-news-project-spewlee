@@ -24,20 +24,10 @@
         {% endif %}
 
         <div class="like">
-            {% if user.is_authenticated %}
-                <form action="{% url 'like_story' story.pk %}" method="POST">
-                    {% csrf_token %}
-                    {% if post_is_liked %}
-                    <button type="submit" name="story_id" value="{{story.id}}">Unlike</button>
-                    {% else %}
-                    <button type="submit" name="story_id" value="{{story.id}}">Like</button>
-                    {% endif %}
-                </form>
-            {% else %}
-                <a href="{% url 'login' %}?next={{request.path}}">Log in to like this article!</a><br>
-            {% endif %}
-            <strong>{{ number_of_likes }} Like{{ number_of_likes|pluralize }}</strong>
-        </div>
+            <form action="{% url 'like_story' story.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit", name="story_id", value="{{ story.id }}">Like</button>
+            </form>
 
         <div id="story-content">
             <img src="{{ story.image }}">
