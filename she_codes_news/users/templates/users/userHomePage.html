@@ -7,16 +7,24 @@
 
 {% block content %}
 
-<h1 class="welcome">Welcome {{ user.username }}!</h1>
-<p>Would you like to make a new story today?</p>
-<a href="{% url 'news:newStory' %}">Write New Story</a>
+<section class="paper">
 
-<div class="edit-profile">
-    <h2>Edit Profile</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="submit">
-    </form>
-</div>
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+    
+    <h1 class="welcome">Welcome {{ user.username }}!</h1>
+    <p>Would you like to make a new story today?</p>
+    <a href="{% url 'news:newStory' %}">Write New Story</a>
+
+    <div class="edit-profile">
+        <h2>Edit Profile</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</section>
+
 {% endblock %}

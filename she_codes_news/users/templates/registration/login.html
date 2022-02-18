@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-<a href="{% url 'users:createAccount' %}">Create Account</a>
+<section class="paper">
+    
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'users:createAccount' %}">Create Account</a>
+
+</section>
 {% endblock %}

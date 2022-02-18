@@ -7,8 +7,16 @@
 
 {% block content %}
 
-<h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
-<p> {{ profilePage.github_url }} </p>
-<p> {{ profilePage.bio }} </p>
+<section class="paper">
+
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+
+    <h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
+    <p> {{ profilePage.github_url }} </p>
+    <p> {{ profilePage.bio }} </p>
+    
+</section>
 
 {% endblock %}
