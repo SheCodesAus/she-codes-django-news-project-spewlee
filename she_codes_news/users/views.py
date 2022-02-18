@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views import generic
@@ -15,6 +16,7 @@ class UserHomePageView(UpdateView):
     model = CustomUser
     form_class = UserProfileForm
     success_url = reverse_lazy('users:userHomePage')
+    success_messsage = "Your profile was updated successfully!"
     template_name = 'users/userHomePage.html'
 
     def get_object(self, queryset=None):
