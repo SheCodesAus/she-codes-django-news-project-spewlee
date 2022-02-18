@@ -23,12 +23,6 @@
             </div>
         {% endif %}
 
-        <div class="like">
-            <form action="{% url 'like_story' story.pk %}" method="POST">
-                {% csrf_token %}
-                <button type="submit", name="story_id", value="{{ story.id }}">Like</button>
-            </form>
-
         <div id="story-content">
             <img src="{{ story.image }}">
             {{ story.content|linebreaks }}

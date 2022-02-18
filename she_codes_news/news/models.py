@@ -25,7 +25,6 @@ class NewsStory(models.Model):
         blank = True
         )
     image = models.URLField(blank=True, null=True)
-    likes = models.ManyToManyField(CustomUser, related_name="story_like")
 
     class Meta:
         ordering = ['-pub_date']
@@ -33,6 +32,6 @@ class NewsStory(models.Model):
     def __str__(self):
         return self.title
 
-    def num_of_likes(self):
+    def total_likes(self):
         return self.likes.count()
 

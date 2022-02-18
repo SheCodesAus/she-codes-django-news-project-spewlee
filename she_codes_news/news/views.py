@@ -1,9 +1,8 @@
-from django.shortcuts import get_object_or_404
 from django.views import generic
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
-from django.http import HttpResponseRedirect
+
 
 
 class IndexView(generic.ListView):
@@ -53,10 +52,3 @@ class DeleteStoryView(generic.DeleteView):
     template_name = 'news/delete_story.html'
     success_url = reverse_lazy('news:index')
 
-
-
-def LikeStoryView(request, pk):
-    story = get_object_or_404(NewsStory, id=request.POST.get('story_id'))
-    story.likes.add(request.user)
-
-    return HttpResponseRedirect(reverse('story',args=[str(pk)]))
