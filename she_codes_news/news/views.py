@@ -59,4 +59,4 @@ def LikeStoryView(request, pk):
     story = get_object_or_404(NewsStory, id=request.POST.get('story_id'))
     story.likes.add(request.user)
 
-    return HttpResponseRedirect(reverse(args=[str(pk)]))
+    return HttpResponseRedirect(reverse('story',args=[str(pk)]))
