@@ -15,7 +15,7 @@ class CreateAccountView(CreateView):
 class UserHomePageView(UpdateView):
     model = CustomUser
     form_class = UserProfileForm
-    success_url = reverse_lazy('users:userHomePage')
+    success_url = '/success/'
     success_messsage = "Your profile was updated successfully!"
     template_name = 'users/userHomePage.html'
 
