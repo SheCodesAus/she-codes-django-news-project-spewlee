@@ -3,11 +3,13 @@ body {
 }
 
 .paper {
-    background-image: url("{% static 'news/images/linedPaper.jpg' %}");    
+    background-image: url("{% static 'news/images/linedPaper.jpg' %}"); 
+    background-repeat: no-repeat;   
     display:flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 
 
