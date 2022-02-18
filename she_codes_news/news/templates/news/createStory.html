@@ -12,6 +12,7 @@
         <img src="{% static 'news/images/SheCodesPin.png' %}">
     </div>
 
+    <h2>Create A New Story</h2>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
