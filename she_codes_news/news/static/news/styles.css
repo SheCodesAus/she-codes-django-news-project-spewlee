@@ -106,7 +106,7 @@
     width: 50%;
 }
 
-.delete-story, .update-story {
+.paper {
     background-image: url('images/linedPaper.jpg');
     display:flex;
     align-items: center;

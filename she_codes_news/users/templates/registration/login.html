@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock %}
+
 
 {% block content %}
 <section class="paper">
-    
+
     <div class='pin'>
         <img src="{% static 'news/images/SheCodesPin.png' %}">
     </div>

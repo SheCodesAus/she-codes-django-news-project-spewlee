@@ -2,5 +2,13 @@ body {
     text-align: center;
 }
 
+.paper {
+    background-image: url("{% static 'news/images/linedPaper.jpg' %}");    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 
 

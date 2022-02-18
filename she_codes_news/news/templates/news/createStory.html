@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
 
 {% block content %}
+<section class="paper">
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="submit">
-</form>
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit">
+    </form>
+
+</section>
 
 {% endblock %}
