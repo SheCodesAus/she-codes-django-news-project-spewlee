@@ -30,6 +30,7 @@
 }
 
 .story-card-text {
+    padding: 0.5em;
     grid-column: 2/3;
     grid-row: 3/4;
 }
@@ -61,6 +62,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#story-wrapper .pin img {
+    z-index: 2;
+    grid-column: 1/2;
+    grid-template-rows: 1/2;
+    height: 100%;
+    width: auto;
 }
 
 #story-content {

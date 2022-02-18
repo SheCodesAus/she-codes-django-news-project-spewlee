@@ -13,9 +13,21 @@
         <img src="{% static 'news/images/SheCodesPin.png' %}">
     </div>
 
-    <h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
-    <p> {{ profilePage.github_url }} </p>
-    <p> {{ profilePage.bio }} </p>
+    <div class='profile-info'>
+        <h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
+        {% if profilePage.profile_pic %}
+            <img src="{{ profilePage.profile_pic }}">
+        {% endif %}
+        {% if profilePage.github_url %}
+        <p> {{ profilePage.github_url }} </p>
+        {% endif %}
+        {% if profilePage.linkedin_url %}
+        <p> {{ profilePage.linkedin_url }} </p>
+        {% endif %}
+        {% if profilePage.bio %}
+        <p> {{ profilePage.bio }} </p>
+        {% endif %}
+    </div>
 
 </section>
 

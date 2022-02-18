@@ -24,7 +24,11 @@
         {% endif %}
 
         <div id="story-content">
-            <img src="{{ story.image }}">
+            {% if story.image %}
+                <img src="{{ story.image }}">
+            {% else %}
+                <img src="https://picsum.photos/600">
+            {% endif %}
             {{ story.content|linebreaks }}
         </div>
     </section>
