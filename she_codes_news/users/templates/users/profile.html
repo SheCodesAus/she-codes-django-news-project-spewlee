@@ -19,10 +19,10 @@
             <img src="{{ profilePage.profile_pic }}">
         {% endif %}
         {% if profilePage.github_url %}
-        <p> {{ profilePage.github_url }} </p>
+        <a href="{{ profilePage.github_url }}">{{ profilePage.github_url }}</a>
         {% endif %}
         {% if profilePage.linkedin_url %}
-        <p> {{ profilePage.linkedin_url }} </p>
+        <a href="{{ profilePage.linkedin_url }}" >{{ profilePage.linkedin_url }}</a>
         {% endif %}
         {% if profilePage.bio %}
         <p> {{ profilePage.bio }} </p>

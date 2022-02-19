@@ -23,7 +23,7 @@ body {
     grid-row: 3/4;
 }
 
-.profile-info {
+.profile-info, .create-account {
     grid-column: 2/3;
     grid-row: 2/4;
 }
