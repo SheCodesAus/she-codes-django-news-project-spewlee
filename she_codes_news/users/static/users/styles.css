@@ -24,6 +24,7 @@ body {
 }
 
 .profile-info, .create-account {
+    display:block;
     grid-column: 2/3;
     grid-row: 2/4;
 }
@@ -34,6 +35,10 @@ body {
     grid-template-rows: 1/2;
     height: 100%;
     width: auto;
+}
+
+.profile-info img {
+    margin:1em;
 }
 
 
