@@ -62,6 +62,20 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 25% 65%;
+    text-align: center;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+#story-wrapper a {
+    color: black;
+}
+
+#story-wrapper a:hover {
+    color:#8246AF;
 }
 
 #story-wrapper .pin img {
@@ -72,8 +86,14 @@
     width: auto;
 }
 
+.actual-story {
+    grid-column: 2/3;
+    grid-template-rows: 2/3;
+}
+
 #story-content {
-    text-align: justify;
+    grid-column: 2/3;
+    grid-template-rows: 3/4;
 }
 
 #story-content img {
