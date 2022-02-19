@@ -29,6 +29,10 @@ body {
     grid-row: 2/4;
 }
 
+.login a {
+    margin: 0.3em;
+}
+
 .pin img {
     z-index: 2;
     grid-column: 1/2;
