@@ -1,8 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
+
+{% block content %}
 <div id="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
-    <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
-        {{ story.content|linebreaks }}
+
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
     </div>
+
+    <section class="actual-story">
+        <h2>{{ story.title }}</h2>
+        <a href="{% url 'users:profile-page' story.author.id %}">{{ story.author }}</a>
+        <h4>{{ story.category }}</h4>
+        {% if story.author == request.user %}
+            <div class="edit-card">
+                <a href="{% url 'news:editStory' story.pk %}">Update Story</a>
+                <a href="{% url 'news:deleteStory' story.pk %}">Delete Story</a>
+            </div>
+        {% endif %}
+
+        <div id="story-content">
+            {% if story.image %}
+                <img src="{{ story.image }}">
+            {% else %}
+                <img src="https://picsum.photos/600">
+            {% endif %}
+            {{ story.content|linebreaks }}
+        </div>
+    </section>
+
 </div>
+{% endblock %}

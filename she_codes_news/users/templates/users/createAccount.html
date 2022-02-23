@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="paper">
+
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+
+    <div class='create-account'>
+        <h2>Create Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+</section>
+{% endblock %}

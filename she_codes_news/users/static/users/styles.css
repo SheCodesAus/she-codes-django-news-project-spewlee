@@ -1,0 +1,49 @@
+body {
+    text-align: center;
+}
+
+.paper {
+    background-image: url("/static/news/images/linedPaper.jpg");
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 25% 65%;
+    text-align: center;
+    background-repeat: no-repeat;
+    margin: 4em;
+}
+
+.paper h2, .paper h1 {
+    color: black;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.paper form, .edit-profile {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.profile-info, .create-account, .login {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+.login a {
+    margin: 0.3em;
+}
+
+.pin img {
+    z-index: 2;
+    grid-column: 1/2;
+    grid-template-rows: 1/2;
+    height: 100%;
+    width: auto;
+}
+
+.profile-info a {
+    display: block;
+}
+
+
+

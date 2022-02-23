@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="paper">
+
+    <div class='pin'>
+        <img src="{% static 'news/images/SheCodesPin.png' %}">
+    </div>
+
+    <div class='profile-info'>
+        <h1> {{ profilePage.first_name }} {{ profilePage.last_name }} </h1>
+        {% if profilePage.profile_pic %}
+            <img src="{{ profilePage.profile_pic }}">
+        {% endif %}
+        {% if profilePage.github_url %}
+        <a href="{{ profilePage.github_url }}">{{ profilePage.github_url }}</a>
+        {% endif %}
+        {% if profilePage.linkedin_url %}
+        <a href="{{ profilePage.linkedin_url }}" >{{ profilePage.linkedin_url }}</a>
+        {% endif %}
+        {% if profilePage.bio %}
+        <p> {{ profilePage.bio }} </p>
+        {% endif %}
+    </div>
+
+</section>
+
+{% endblock %}
