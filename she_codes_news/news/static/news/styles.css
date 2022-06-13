@@ -2,7 +2,8 @@
     flex: 1;
     line-height: 1;
     text-align:center;     
-    width: 100%;    
+    width: 400px ;
+    max-height: 500px;    
     margin: 2em;    
     padding-top:0.1em;
     border:1px solid #E8E8E8;  
@@ -28,8 +29,9 @@
 }
 
 .story-preview img {
+    object-fit: contain;
     width: 100%;
-    height: auto;
+    max-height: 300px;
     grid-column: 2/3;
     grid-row: 2/3;
 }
